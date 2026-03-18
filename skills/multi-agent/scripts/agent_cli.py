@@ -145,20 +145,20 @@ if __name__ == "__main__":
     p_init.add_argument("goal")
 
     p_say = subparsers.add_parser("say")
-    p_say.add_argument("role", choices=["planner", "executor", "reviewer", "orchestrator", "human"])
+    p_say.add_argument("role")
     p_say.add_argument("message")
 
     p_ctx = subparsers.add_parser("context")
 
     p_phase = subparsers.add_parser("set-phase")
-    p_phase.add_argument("phase", choices=["planning", "execution", "review", "completed", "discuss"])
+    p_phase.add_argument("phase")
 
     p_tasks = subparsers.add_parser("set-tasks")
     p_tasks.add_argument("json_str")
 
     p_task = subparsers.add_parser("update-task")
     p_task.add_argument("id")
-    p_task.add_argument("status", choices=["pending", "in_progress", "review_pending", "done", "rejected"])
+    p_task.add_argument("status")
 
     p_save_ses = subparsers.add_parser("save-session")
     p_save_ses.add_argument("role")
